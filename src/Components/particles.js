@@ -16,85 +16,87 @@ export default function ParticleBackground(props) {
 		console.log(container);
 	};
 	return (
-		<Particles
-			id="tsparticles"
-			init={particlesInit}
-			loaded={particlesLoaded}
-			options={{
-				background: {
-					color: {
-						value: "#1e1b1b",
+		<div style={{ position: "absolute", zIndex: "-1" }}>
+			<Particles
+				id="tsparticles"
+				init={particlesInit}
+				loaded={particlesLoaded}
+				options={{
+					background: {
+						color: {
+							value: "#1e1b1b",
+						},
 					},
-				},
-				fpsLimit: 100,
-				interactivity: {
-					events: {
-						onClick: {
+					fpsLimit: 100,
+					interactivity: {
+						events: {
+							onClick: {
+								enable: true,
+								mode: "push",
+							},
+							onHover: {
+								enable: true,
+								mode: "grab",
+							},
+							resize: true,
+						},
+						modes: {
+							push: {
+								quantity: 4,
+							},
+							repulse: {
+								distance: 200,
+								duration: 0.4,
+							},
+							grab: {
+								distance: 150,
+							},
+						},
+					},
+					particles: {
+						color: {
+							value: "#ffffff",
+						},
+						links: {
+							color: "#ffffff",
+							distance: 140,
 							enable: true,
-							mode: "push",
+							opacity: 0.5,
+							width: 0.5,
 						},
-						onHover: {
+						collisions: {
+							enable: false,
+						},
+						move: {
+							direction: "none",
 							enable: true,
-							mode: "grab",
+							outModes: {
+								default: "bounce",
+							},
+							random: true,
+							speed: 0.5,
+							straight: false,
 						},
-						resize: true,
-					},
-					modes: {
-						push: {
-							quantity: 4,
+						number: {
+							density: {
+								enable: true,
+								area: 500,
+							},
+							value: 80,
 						},
-						repulse: {
-							distance: 200,
-							duration: 0.4,
+						opacity: {
+							value: 0.5,
 						},
-						grab: {
-							distance: 150,
+						shape: {
+							type: "circle",
+						},
+						size: {
+							value: { min: 1, max: 1 },
 						},
 					},
-				},
-				particles: {
-					color: {
-						value: "#ffffff",
-					},
-					links: {
-						color: "#ffffff",
-						distance: 140,
-						enable: true,
-						opacity: 0.5,
-						width: 0.5,
-					},
-					collisions: {
-						enable: false,
-					},
-					move: {
-						direction: "none",
-						enable: true,
-						outModes: {
-							default: "bounce",
-						},
-						random: true,
-						speed: 0.5,
-						straight: false,
-					},
-					number: {
-						density: {
-							enable: true,
-							area: 500,
-						},
-						value: 80,
-					},
-					opacity: {
-						value: 0.5,
-					},
-					shape: {
-						type: "circle",
-					},
-					size: {
-						value: { min: 1, max: 1 },
-					},
-				},
-				detectRetina: false,
-			}}
-		/>
+					detectRetina: false,
+				}}
+			/>
+		</div>
 	);
 }
