@@ -27,7 +27,7 @@ export default function ParticleBackground(props) {
 							value: "#1e1b1b",
 						},
 					},
-					fpsLimit: 100,
+					fpsLimit: 90,
 					interactivity: {
 						events: {
 							onClick: {
@@ -80,9 +80,9 @@ export default function ParticleBackground(props) {
 						number: {
 							density: {
 								enable: true,
-								area: 500,
+								area: 800,
 							},
-							value: 80,
+							value: 120,
 						},
 						opacity: {
 							value: 0.5,
