@@ -12,8 +12,9 @@ const FooterDiv = styled.div((props) => ({
 	width: "100%",
 	height: "11%",
 	color: "#fff",
-	backgroundColor: "rgba(58,5,34,0.70)",
+	backgroundColor: "rgba(58,5,34,0.90)",
 	gridTemplateColumns: "1fr 1fr ",
+	alignItems: "center",
 	display: "grid",
 	transition: "transform 0.5s",
 	transform: props.show ? "translate(0)" : "translate(0%,100%)",
@@ -21,7 +22,7 @@ const FooterDiv = styled.div((props) => ({
 		display: "flex",
 		flexDirection: "column",
 		textAlign: "center",
-		gap: "0.2rem",
+		gap: "0.1rem",
 	},
 	"& .footerRight": {
 		display: "grid",
@@ -34,7 +35,6 @@ const FooterDiv = styled.div((props) => ({
 		"& .footerLinks": {
 			display: "flex",
 			alignItems: "center",
-			// gap:'4px',
 			"& a": {
 				textDecoration: "none",
 				color: "#fff",
@@ -49,7 +49,26 @@ const FooterDiv = styled.div((props) => ({
 			display: "flex",
 			flexDirection: "column",
 			justifyContent: "center",
-			gap:'1rem',
+			gap: "1rem",
+		},
+	},
+	"@media (max-width:600px)": {
+		height: "30%",
+		gridTemplateColumns: "1fr",
+		padding: "0rem 0rem 0rem 0rem",
+		"& .footerRight": {
+			display: "grid",
+			gridTemplateColumns: "1fr",
+			"& .socialIcon": {
+				"& svg": {
+					fontSize: "2rem",
+				},
+			},
+			"& .footerRight-right": {
+				justifyContent: "center",
+				alignItems: "center",
+				gap: "0rem",
+			},
 		},
 	},
 }));
@@ -60,7 +79,7 @@ const FooterButton = styled.button((props) => ({
 	borderRadius: "14px 14px 0 0",
 	border: "none",
 	left: "50%",
-	transform: "translate(-50%,-93%)",
+	transform: "translate(-50%,-220%)",
 	cursor: "pointer",
 	transition: "all 0.2s",
 	zIndex: "-2",
@@ -69,6 +88,9 @@ const FooterButton = styled.button((props) => ({
 	"&:active": {
 		backgroundColor: "#a1a1a5",
 	},
+	'@media(max-width:600px)':{
+		transform: "translate(-50%,-510%)",
+	}
 }));
 export default function Footer(props) {
 	const [show, setShow] = useState(true);

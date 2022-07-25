@@ -13,10 +13,12 @@ import pg from "./media/pg.png";
 import gn from "./media/gn.png";
 import mf from "./media/mf.png";
 const CardContainer = styled.div`
+	max-width: 1200px;
+	height: 88%;
+	overflow-y: scroll;
+	margin: auto;
 	--scrollbar-width: 8px;
 	--mask-height: 32px;
-	overflow-y: auto;
-	height: 92%;
 	padding-bottom: var(--mask-height);
 	padding-top: var(--mask-height);
 	--mask-image-content: linear-gradient(
@@ -33,7 +35,30 @@ const CardContainer = styled.div`
 	mask-size: var(--mask-size-content), var(--mask-size-scrollbar);
 	mask-position: 0 0, 100% 0;
 	mask-repeat: no-repeat, no-repeat;
+	@media (max-width: 600px) {
+		height: 95%;
+	}
 `;
+const CardInnerContainer = styled.div((props) => ({
+	display: "grid",
+	gridTemplateColumns: "1fr 1fr 1fr",
+	gap: "1rem",
+	padding: "1rem",
+	"@media (max-width:900px)": {
+		gridTemplateColumns: "1fr 1fr",
+	},
+	"@media (max-width:600px)": {
+		gridTemplateColumns: "1fr",
+		padding: "0rem 3rem 0rem 3rem",
+	},
+}));
+const tech = (
+	<span style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}>
+		<span style={{ color: "#B50000" }}>HTML</span>,
+		<span style={{ color: "pink" }}>CSS</span>,
+		<span style={{ color: "yellow" }}> JS</span>
+	</span>
+);
 const cardData = [
 	{
 		img: colorPallet,
@@ -50,162 +75,102 @@ const cardData = [
 				</span>
 			),
 		},
+		netlify: true,
+		location: "https://colorpallet.netlify.app",
 	},
 	{
 		img: spaceT,
 		text: {
 			name: "Space Tourism",
-			desc: "an elegant multi-page space web site. are you ready to explore our solar system? fasten your seatbelt then :)",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
+			desc: "an elegant multi-page space web site. are you ready to explore our solar system? fasten your seatbelt then",
+			techs: tech,
 		},
-	},
-	{
-		img: bankistApp,
-		text: {
-			name: "Bankist App",
-			desc: "did you register to bankist? this is its efficient banking app. keep track of your expenses and pay up your loan. come have a look arround.",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
-		},
-	},
-	{
-		img: bankistWeb,
-		text: {
-			name: "Bankist Web Page",
-			desc: "are you looking for a reliable and modern banking system? have a look at our web page. you will not regret it",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
-		},
+		netlify: true,
+		location: "https://sapce-tourism.netlify.app",
 	},
 	{
 		img: mapty,
 		text: {
 			name: "MAPTY",
-			desc: "this little web application helps and keep track of distances you ran or cycled and will keep yor data even if you close the page",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
+			desc: "this little web application helps and keep track of distances you ran or cycled. it will come in handy",
+			techs: tech,
 		},
+		netlify: true,
+		location: "https://mapty-responsive.netlify.app",
 	},
 	{
 		img: sneakers,
 		text: {
 			name: "eCommerce single page",
 			desc: "are you tired of looking for sneakers? try this one. sure it fits you perfectly and comes with a reasonable price?",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
+			techs: tech,
 		},
+		netlify: true,
+		location: "https://ecommerce-omidvar.netlify.app",
+	},
+	{
+		img: bankistApp,
+		text: {
+			name: "Bankist App",
+			desc: "did you register to bankist? keep track of your expenses and pay up your loan. come have a look arround.",
+			techs: tech,
+		},
+		netlify: false,
+		location: "/site/bankist/bankist-app",
+	},
+	{
+		img: bankistWeb,
+		text: {
+			name: "Bankist Web Page",
+			desc: "are you looking for a reliable and modern banking system? have a look at our web page. you will not regret it",
+			techs: tech,
+		},
+		netlify: false,
+		location: "/site/bankist/bankist-web",
 	},
 	{
 		img: pg,
 		text: {
 			name: "Pig Game",
 			desc: "bored? play this game with your friend. let's see who's the luckiest.go and enjoy. winner takes all",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
+			techs: tech,
 		},
+		netlify: false,
+		location: "/site/pig-game",
 	},
 	{
 		img: gn,
 		text: {
 			name: "Guess the Number",
 			desc: "don't have any friends to play pig games? no worries, guess the number and keep yourself busy ",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
+			techs: tech,
 		},
+		netlify: false,
+		location: "/site/guess-the-number",
 	},
 	{
 		img: mf,
 		text: {
-			name: "Color Pallet",
+			name: "Moving Frame",
 			desc: "enjoy the scenery of a plane, high up in the sky. made with bunch of PNGs and pure js animation",
-			techs: (
-				<span
-					style={{ fontFamily: '"Changa", sans-serif', fontSize: "1.5rem" }}
-				>
-					<span style={{ color: "#B50000" }}>HTML</span>,
-					<span style={{ color: "pink" }}>CSS</span>,
-					<span style={{ color: "yellow" }}> JS</span>
-				</span>
-			),
+			techs: tech,
 		},
+		netlify: false,
+		location: "/site/moving-frame",
 	},
 ];
 export default function App(props) {
 	return (
 		<div style={{ width: "100%", height: "100%" }} className="App">
 			<ParticleBackground />
-			<CardContainer
-				style={{
-					maxWidth: "1200px",
-					height: "88%",
-					overflowY: "scroll",
-					margin: "auto",
-				}}
-			>
-				<div
-					style={{
-						display: "grid",
-						gridTemplateColumns: "1fr 1fr 1fr",
-						gap: "1rem",
-						padding: "1rem",
-					}}
-				>
+			<CardContainer>
+				<CardInnerContainer>
 					{cardData.map((data) => (
-						<WebCard data={data} />
+						<WebCard data={data} ket={data.location} />
 					))}
-				</div>
+				</CardInnerContainer>
 			</CardContainer>
-			<Footer/>
+			<Footer />
 		</div>
 	);
 }
