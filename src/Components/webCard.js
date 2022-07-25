@@ -10,7 +10,7 @@ export default function WebCard({ data }) {
 		<Card
 			sx={{
 				width: "100%",
-				padding: "0.25rem",
+				padding: "0.5rem 0.5rem 0rem 0.5rem",
 				backgroundColor: "#595e69",
 				borderRadius: "12px",
 				transition: "transform 0.2s",

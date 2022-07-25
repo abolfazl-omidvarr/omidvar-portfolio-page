@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "@emotion/styled";
 import ParticleBackground from "./Components/particles";
 import WebCard from "./Components/webCard";
-import { Grid } from "@mui/material";
+import Footer from "./Components/footer";
 import colorPallet from "./media/colorPallet.png";
 import spaceT from "./media/spaceT.png";
 import bankistApp from "./media/bankistApp.png";
@@ -187,7 +187,7 @@ export default function App(props) {
 			<CardContainer
 				style={{
 					maxWidth: "1200px",
-					height: "90%",
+					height: "88%",
 					overflowY: "scroll",
 					margin: "auto",
 				}}
@@ -205,6 +205,7 @@ export default function App(props) {
 					))}
 				</div>
 			</CardContainer>
+			<Footer/>
 		</div>
 	);
 }
