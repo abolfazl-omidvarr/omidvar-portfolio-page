@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import FooterLinks from "./footerLinks";
 import styled from "@emotion/styled";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
@@ -53,7 +52,7 @@ const FooterDiv = styled.div((props) => ({
 		},
 	},
 	"@media (max-width:600px)": {
-		height: "30%",
+		height: "25%",
 		gridTemplateColumns: "1fr",
 		padding: "0rem 0rem 0rem 0rem",
 		"& .footerRight": {
@@ -78,8 +77,9 @@ const FooterButton = styled.button((props) => ({
 	backgroundColor: "#e3e4e7",
 	borderRadius: "14px 14px 0 0",
 	border: "none",
+	alignSelf: "flex-start",
 	left: "50%",
-	transform: "translate(-50%,-220%)",
+	transform: "translate(-50%,-100%)",
 	cursor: "pointer",
 	transition: "all 0.2s",
 	zIndex: "-2",
@@ -88,9 +88,9 @@ const FooterButton = styled.button((props) => ({
 	"&:active": {
 		backgroundColor: "#a1a1a5",
 	},
-	'@media(max-width:600px)':{
-		transform: "translate(-50%,-510%)",
-	}
+	"@media(max-width:600px)": {
+		transform: "translate(-50%,-100%)",
+	},
 }));
 export default function Footer(props) {
 	const [show, setShow] = useState(true);

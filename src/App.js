@@ -14,7 +14,7 @@ import gn from "./media/gn.png";
 import mf from "./media/mf.png";
 const CardContainer = styled.div`
 	max-width: 1200px;
-	height: 88%;
+	height: 94%;
 	overflow-y: scroll;
 	margin: auto;
 	--scrollbar-width: 8px;
